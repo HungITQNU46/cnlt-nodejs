@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <article>
+            <h1 style="color: #007bff;"><%= post.title %></h1>
+            <p style="color: #999; font-size: 0.9em;">Ngày đăng: <%= new Date().toLocaleDateString('vi-VN') %></p>
+            <hr>
+            <div style="line-height: 1.8; font-size: 1.1em; text-align: justify; white-space: pre-line;">
+                <%= post.body %>
+            </div>
+        </article>
+        
+        <div style="margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="/edit/<%= post._id %>" class="btn btn-primary">Chỉnh sửa bài này</a>
+            <a href="/" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </div>
+</body>
+</html>

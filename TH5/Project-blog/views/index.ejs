@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog của Hưng</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách bài viết</h1>
+        <a href="/blogposts/new" class="btn btn-primary">+ Tạo bài viết mới</a>
+        <hr>
+        <% posts.forEach(post => { %>
+            <div style="padding: 15px; border-bottom: 1px solid #ddd;">
+                <h3><%= post.title %></h3>
+                <a href="/blogposts/<%= post._id %>" class="btn btn-secondary">Xem chi tiết</a>
+                <a href="/edit/<%= post._id %>" class="btn btn-primary">Sửa bài</a>
+                <a href="/delete/<%= post._id %>" class="btn btn-danger" onclick="return confirm('Xóa nhé Hưng?')">Xóa</a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

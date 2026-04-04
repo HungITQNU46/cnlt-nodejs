@@ -1,0 +1,78 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Màu nền xám nhạt cho dịu mắt */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+}
+
+/* Khung container chính */
+.container {
+    background-color: #ffffff; 
+    width: 90%;
+    max-width: 800px; 
+    padding: 30px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd; 
+}
+h1 {
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    margin-right: 5px; /* Khoảng cách giữa các nút */
+}
+
+/* 2. Nút mặc định (Màu xanh dương) */
+.btn-primary, .btn:not(.btn-danger):not(.btn-secondary) {
+    background-color: #007bff;
+    color: white !important;
+}
+
+.btn-primary:hover, .btn:not(.btn-danger):not(.btn-secondary):hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* 3. Nút Xóa (Màu đỏ) */
+.btn-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white !important;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px dashed #eee;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bài viết mới</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Viết bài mới</h1>
+        <hr>
+        <form action="/blogposts/store" method="POST">
+            <div style="text-align: left; margin-bottom: 15px;">
+                <label style="font-weight: bold;">Tiêu đề bài viết:</label>
+                <input type="text" name="title" placeholder="Nhập tiêu đề..." required>
+            </div>
+            
+            <div style="text-align: left; margin-bottom: 15px;">
+                <label style="font-weight: bold;">Nội dung bài viết:</label>
+                <textarea name="body" rows="10" placeholder="Viết gì đó hay ho vào đây Hưng nhé..." required></textarea>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Đăng bài ngay</button>
+                <a href="/" class="btn btn-secondary">Hủy bỏ</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
