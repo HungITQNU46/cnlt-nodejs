@@ -1,11 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-// Sử dụng chuẩn URL mới thay cho url.parse()
 const appEmitter = require('./events/AppEmitter');
 
 const server = http.createServer((req, res) => {
-    // Sử dụng WHATWG URL API (Sửa lỗi DeprecationWarning)
     const baseURL = `http://${req.headers.host}`;
     const parsedUrl = new URL(req.url, baseURL);
     const pathname = parsedUrl.pathname;
@@ -28,7 +26,6 @@ const server = http.createServer((req, res) => {
         });
     };
 
-    // QUAN TRỌNG: Thêm return trước mỗi lần gọi serveHTML hoặc res.end
     if (pathname === '/') {
         return serveHTML('index.html');
     } 
