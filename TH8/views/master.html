@@ -1,0 +1,17 @@
+<h3>Upload với Multer (1 file)</h3>
+<form action="/upload-multer" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload Multer</button>
+</form>
+<hr>
+<h3>Upload nhiều file (Tối đa 17 file)</h3>
+<form action="/upload-many" method="post" enctype="multipart/form-data">
+    <input type="file" name="many-files" multiple>
+    <button type="submit">Upload Nhiều File</button>
+</form>
+<hr>
+<h3>Upload với Formidable</h3>
+<form action="/upload-formidable" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload Formidable</button>
+</form>
