@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Realtime</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="loginScreen">
+      <div class="login-box">
+        <h1>Chat Realtime</h1>
+        <input type="text" id="username" placeholder="Nhập tên của bạn" maxlength="20">
+        <button onclick="joinChat()">Tham gia</button>
+      </div>
+    </div>
+    <div id="chatScreen" class="hidden">
+    <div class="header">
+        <h2>Chat Realtime - <span id="myUsername"></span></h2>
+        <div class="header-actions">
+            <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+            <button class="logout-btn" onclick="logout()">Thoát</button>
+        </div>
+    </div>
+      <div class="main">
+        <div class="users-panel">
+          <h3>Người dùng online (<span id="onlineCount">0</span>)</h3>
+            <input type="text" id="searchUser" placeholder="Tìm người dùng...">
+            <ul id="usersList"></ul>
+        </div>
+        <div class="chat-panel">
+          <div id="chatHeader">
+            <strong>Chọn người dùng để bắt đầu chat</strong>
+          </div>
+          <div id="messages" class="messages"></div>
+
+          <div id="typingStatus" class="typing-status"></div>
+
+          <div class="emoji-bar">
+            <button onclick="addEmoji('😀')">😀</button>
+            <button onclick="addEmoji('😂')">😂</button>
+            <button onclick="addEmoji('❤️')">❤️</button>
+            <button onclick="addEmoji('🔥')">🔥</button>
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <input type="file" id="imageInput" accept="image/*" multiple  hidden>
+            <button onclick="document.getElementById('imageInput').click()">📷</button>
+            <button onclick="sendMessage()">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+  <div id="imageModal" class="image-modal hidden" onclick="closeImageModal()">
+  <img id="modalImage">
+</div>
+</body>
+</html>
